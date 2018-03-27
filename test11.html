@@ -10,7 +10,7 @@
 </head>
 
 <body id="dulces">
-  <form action="#" method="POST" name="miformulario">
+  <form id="ec11" method="POST" name="miformulario">
     <center>
       <table>
         <tr>
@@ -323,7 +323,7 @@
           <td> III. Cuando las dos palabras signifiquen lo mismo, ponga el numero (1), cuando signifiquen lo opuesto,ponga el numero (0): </td>
         </tr>
         <br><br>
-        <tr> 
+        <tr>
           <td class="test">12.Salado-Dulce
             <select id="32" name="32" class="test" size="1" cols="2">
       <option selected value="Seleciona una"></option>
@@ -334,7 +334,7 @@
 
         <tr>
           <td class="test"> 13.Alegrarse-Regocijarse
-            <select id="33" name="33"  class="test" size="1" cols="2">
+            <select id="33" name="33" class="test" size="1" cols="2">
       <option selected value="Seleciona una"></option>
       <option value="1">0</option>
       <option value="2">1</option>
@@ -352,11 +352,12 @@
 
         <tr>
           <td class="test">15. Sentarse-Pararse
-            <select  id="35" name="35"class="test" size="1" cols="2">
-      <option selected value="Seleciona una"></option>
-      <option value="1">0</option>
-      <option value="2">1</option>
-      </select></td>
+            <select id="35" name="35" class="test" size="1" cols="2">
+              <option selected value="Seleciona una"></option>
+              <option value="1">0</option>
+              <option value="2">1</option>
+            </select>
+          </td>
         </tr>
 
         <tr>
@@ -402,18 +403,38 @@
               <option selected value="Seleciona una"></option>
               <option value="1">0</option>
               <option value="2">1</option>
-            </select></td>
+            </select>
+          </td>
+          <div id="resultado"></div>
         </tr>
         <br> <br> </table>
-      <input type="RESET" value="Reinicio">
-      <button id="submit" style="text-align:center;">Enviar</button>
-
-
-      <footer>
-        <p> &copy; Psicotest Derechos Reservados 2018</p>
-      </footer>
-    </center>
   </form>
+  <button id="submit">Enviar</button>
+
+  <footer>
+    <p> &copy; Psicotest Derechos Reservados 2018</p>
+  </footer>
+  </center>
 </body>
+<script type="text/javascript">
+  $("#submit").click(function() {
+    var datos = new FormData($("#ec11")[0]);
+
+    $.ajax({
+      url: 'config/llenaEC11.php',
+      type: 'POST',
+      data: datos,
+      contentType: false,
+      processData: false,
+      success: function(data) {
+        if (data == "1") {
+          $(location).attr("href", "test.html");
+        } else {
+          $("#resultado").html('<div class="alert alert-danger" role="alert">' + data + '</div>');
+        }
+      }
+    });
+  });
+</script>
 
 </html>
