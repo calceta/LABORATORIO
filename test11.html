@@ -10,10 +10,14 @@
 </head>
 
 <body id="dulces">
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 =======
   <form id="ec11" method="POST" name="miformulario">
 >>>>>>> master
+=======
+  <form id="ec1">
+>>>>>>> Stashed changes
     <center>
       <table>
         <tr>
@@ -323,7 +327,9 @@
         </tr>
         <tr>
           <br><br>
-          <td> <br><br>III. Cuando las dos palabras signifiquen lo mismo, ponga el numero (1), <p>cuando signifiquen lo opuesto,ponga el numero (0): </td>
+          <td> <br><br>III. Cuando las dos palabras signifiquen lo mismo, ponga el numero (1),
+            <p>cuando signifiquen lo opuesto,ponga el numero (0):</p>
+          </td>
         </tr>
         <br><br>
         <tr>
@@ -359,8 +365,12 @@
               <option selected value="Seleciona una"></option>
               <option value="1">0</option>
               <option value="2">1</option>
+<<<<<<< Updated upstream
             </select>
           </td>
+=======
+            </select></td>
+>>>>>>> Stashed changes
         </tr>
 
         <tr>
@@ -410,7 +420,21 @@
           </td>
           <div id="resultado"></div>
         </tr>
+<<<<<<< Updated upstream
         <br> <br> </table>
+=======
+        <br> <br>
+        <div id="resEmp"></div>
+      </table>
+      <input type="RESET" value="Reinicio">
+      <button id="submit" style="text-align:center;">Enviar</button>
+
+
+      <footer>
+        <p> &copy; Psicotest Derechos Reservados 2018</p>
+      </footer>
+    </center>
+>>>>>>> Stashed changes
   </form>
   <button id="submit">Enviar</button>
 
@@ -420,6 +444,7 @@
   </center>
 </body>
 <script type="text/javascript">
+<<<<<<< Updated upstream
   $("#submit").click(function() {
     var datos = new FormData($("#ec11")[0]);
 
@@ -434,6 +459,21 @@
           $(location).attr("href", "test.html");
         } else {
           $("#resultado").html('<div class="alert alert-danger" role="alert">' + data + '</div>');
+=======
+  $(document).ready(function() {
+    var datos = new FormData($("#ec1")[0]);
+    $.ajax({
+      url: 'config/proceso.php',
+      type: 'POST',
+      data: datos,
+      contentType: false,
+      porcessData: false,
+      seccess: function(data) {
+        if (data == "1") {
+          $(location).attr("href", "admin.html");
+        } else {
+          $("#resEmp").html('<div class="alert alert-danger" role="alert"><strong>¡Error!</strong>' + data + '</div>');
+>>>>>>> Stashed changes
         }
       }
     });
