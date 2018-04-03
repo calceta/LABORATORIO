@@ -21,7 +21,7 @@
 		
 			$data = mysqli_fetch_array($result);
 			$_SESSION['user'] = $data['user'];
-			echo "Datos Correctos";
+			echo "1";
 		
 		}else{
 		
