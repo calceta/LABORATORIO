@@ -9,6 +9,7 @@
   <title>Psicotest</title>
 </head>
 <body id="dulces">
+<form id="ec2">
   <center>
     <table>
       <tr>
@@ -445,6 +446,7 @@
       </select></td>
         </tr>
         <br><br>
+        <div id="resEmp"></div>
       </table>
             <input type="RESET" value="Reinicio">
             <button id="submit" style="text-align:center;">Enviar</button>
@@ -453,5 +455,24 @@
     </footer>
   </center>
 </body>
+<script type="text/javascript">
+  $(document).ready(function(){
+     var datos =new FormData($("#ec2")[0]);
+     $.ajax({ 
+        url: 'config/procesos.php', 
+        type: 'POST',
+        data: datos, 
+        contentType: false,
+        processData: false;
+        seccess: function (data){
+          if (data == "1"){
+          $(location).attr ("href", "admin.html");
+          }else {
+            $("#resEmp").html('< div class="alert alert-danger" role="alert><strong>¡Error!</strong>' + data + '</div>');
+          }
+        }
+      });
+  });
+</script>
 
 </html>
