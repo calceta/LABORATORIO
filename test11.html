@@ -5,19 +5,13 @@
   <meta charset="UTF-8">
   <meta name="author">
   <meta content="Equipo 4">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="estilo.css">
   <title>Psicotest</title>
 </head>
 
 <body id="dulces">
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
-  <form id="ec11" method="POST" name="miformulario">
->>>>>>> master
-=======
   <form id="ec1">
->>>>>>> Stashed changes
     <center>
       <table>
         <tr>
@@ -365,12 +359,8 @@
               <option selected value="Seleciona una"></option>
               <option value="1">0</option>
               <option value="2">1</option>
-<<<<<<< Updated upstream
             </select>
           </td>
-=======
-            </select></td>
->>>>>>> Stashed changes
         </tr>
 
         <tr>
@@ -420,34 +410,23 @@
           </td>
           <div id="resultado"></div>
         </tr>
-<<<<<<< Updated upstream
         <br> <br> </table>
-=======
-        <br> <br>
-        <div id="resEmp"></div>
-      </table>
-      <input type="RESET" value="Reinicio">
-      <button id="submit" style="text-align:center;">Enviar</button>
+      <br> <br>
+      <button id="enviar" style="text-align:center;">Enviar</button>
 
 
       <footer>
         <p> &copy; Psicotest Derechos Reservados 2018</p>
       </footer>
     </center>
->>>>>>> Stashed changes
   </form>
-  <button id="submit">Enviar</button>
-
-  <footer>
-    <p> &copy; Psicotest Derechos Reservados 2018</p>
-  </footer>
-  </center>
 </body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-<<<<<<< Updated upstream
-  $("#submit").click(function() {
+  $("#enviar").click(function() {
     var datos = new FormData($("#ec11")[0]);
-
     $.ajax({
       url: 'config/llenaEC11.php',
       type: 'POST',
@@ -459,21 +438,6 @@
           $(location).attr("href", "test.html");
         } else {
           $("#resultado").html('<div class="alert alert-danger" role="alert">' + data + '</div>');
-=======
-  $(document).ready(function() {
-    var datos = new FormData($("#ec1")[0]);
-    $.ajax({
-      url: 'config/proceso.php',
-      type: 'POST',
-      data: datos,
-      contentType: false,
-      porcessData: false,
-      seccess: function(data) {
-        if (data == "1") {
-          $(location).attr("href", "admin.html");
-        } else {
-          $("#resEmp").html('<div class="alert alert-danger" role="alert"><strong>¡Error!</strong>' + data + '</div>');
->>>>>>> Stashed changes
         }
       }
     });
