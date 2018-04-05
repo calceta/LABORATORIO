@@ -8,8 +8,8 @@
 <title>Psicotest</title>
 </head>
 <body id="dulces">
-<form id="ec3">
 <center>
+  <form id="ec3" method="POST">
 <table>
    <tr>
      <td id="ph" colspan="3">
@@ -476,6 +476,8 @@ Las sociedades dependientes a las que no se aplique el método de integración g
  <div id="resultado"></div>
  </tr>
 </table>
+<br><br>
+</form>
             <button id="enviar" style="text-align:center;">Enviar</button>
 
   <footer> 
@@ -488,20 +490,101 @@ Las sociedades dependientes a las que no se aplique el método de integración g
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
   $("#enviar").click(function() {
-     var datos =new FormData($("#ec3")[0]);
+    var r1 = $('#1').val();
+    var r2 = $('#2').val();
+    var r3 = $('#3').val();
+    var r4 = $('#4').val();
+    var r5 = $('#5').val();
+    var r6 = $('#6').val();
+    var r7 = $('#7').val();
+    var r8 = $('#8').val();
+    var r9 = $('#9').val();
+    var r10 = $('#10').val();
+    var r11 = $('#11').val();
+    var r12 = $('#12').val();
+    var r13 = $('#13').val();
+    var r14 = $('#14').val();
+    var r15 = $('#15').val();
+    var r16 = $('#16').val();
+    var r17 = $('#17').val();
+    var r18 = $('#18').val();
+    var r19 = $('#19').val();
+    var r20 = $('#20').val();
+    var r21 = $('#21').val();
+    var r22 = $('#22').val();
+    var r23 = $('#23').val();
+    var r24 = $('#24').val();
+    var r25 = $('#25').val();
+    var r26 = $('#26').val();
+    var r27 = $('#27').val();
+    var r28 = $('#28').val();
+    var r29 = $('#29').val();
+    var r30 = $('#30').val();
+    var r31 = $('#31').val();
+    var r32 = $('#32').val();
+    var r33 = $('#33').val();
+    var r34 = $('#34').val();
+    var r35 = $('#35').val();
+    var r36 = $('#36').val();
+    var r37 = $('#37').val();
+    var r38 = $('#38').val();
+    var r39 = $('#39').val();
+    var r40 = $('#40').val();
+     var datos = {
+        r1: r1,
+        r2: r2,
+        r3: r3,
+        r4: r4,
+        r5: r5,
+        r6: r6,
+        r7: r7,
+        r8: r8,
+        r9: r9,
+        r10: r10,
+        r11: r11,
+        r12: r12,
+        r13: r13,
+        r14: r14,
+        r15: r15,
+        r16: r16,
+        r17: r17,
+        r18: r18,
+        r19: r19,
+        r20: r20,
+        r21: r21,
+        r22: r22,
+        r23: r23,
+        r24: r24,
+        r25: r25,
+        r26: r26,
+        r27: r27,
+        r28: r28,
+        r29: r29,
+        r30: r30,
+        r31: r31,
+        r32: r32,
+        r33: r33,
+        r34: r34,
+        r35: r35,
+        r36: r36,
+        r37: r37,
+        r38: r38,
+        r39: r39,
+        r40: r40
+      };
+      console.log(datos);
      $.ajax({ 
-        url: 'config/llenaEC11.php', 
+        url: 'config/llenaec3.php', 
         type: 'POST',
-        data: datos, 
-        contentType: false,
-        processData: false;
-        seccess: function (data){
-          if (data == "1"){
-          $(location).attr ("href", "test.html");
-          }else {
-            $("#resEmp").html('<div class="alert alert-danger" role="alert">' + data + '</div>');
-          }
+        data: datos,
+        cache: false,
+        success: function(data) {
+        if (data == "1") {
+          $(location).attr("href", "test.html");
+        } else {
+          $("#resultado").html('<div class="alert alert-danger" role="alert">' + data + '</div>');
         }
+      }
       });
   });
 </script>

@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<title>Safe Solutions</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,maxium-scale=1.0, minium-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
 	<link href="https://file.myfontastic.com/r8xyb5Ts97UqFfYGTxND46/icons.css" rel="stylesheet">
 	<header class="header">
@@ -65,9 +66,6 @@
 					<br>
 					<img src="https://i.pinimg.com/originals/8f/52/c6/8f52c64810830bbdbeaa712797cd099c.jpg">
 				</article>
-
-
-
 				<article class="info__columna">
 					<img src="https://www.smythacademy.com/wordpress/wp-content/uploads/2012/01/testbackground.jpg">
 					<h1 class="info__titulo">ENCUESTAS.</h1>
@@ -76,7 +74,7 @@
 						<nav class="nav" id="nav">
 							<ul class="menu">
 								<center>
-									<li class="menu__item"><a href="jhh.html" class="menu__link select">Admon</a></li>
+									<li class="menu__item"><a data-toggle="modal" data-target="#nombreec1" class="menu__link select">Admon</a></li>
 									<li class="menu__item"><a href="test2.html" class="menu__link">Aux Admon</a></li>
 									<li class="menu__item"><a href="test11.html" class="menu__link">Vendedor</a></li>
 								</center>
@@ -88,6 +86,87 @@
 		</section>
 		</div>
 	</main>
+	<!-- Modal -->
+	<div class="modal fade" id="nombreec1" tabindex="-1" role="dialog" aria-labelledby="nombreec1Title" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="nombreec1LongTitle">Ingresa tu nombre. Encuesta 1</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+				</div>
+				<div class="modal-body">
+					<form id="log">
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">Nombre</span>
+							</div>
+							<input id="nom1" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="user1">
+						</div>
+						<div id="resultado"></div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button id="nec1" type="button" class="btn btn-primary">Resolver Encuesta</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="nombreec2" tabindex="-1" role="dialog" aria-labelledby="nombreec2Title" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="nombreec2LongTitle">Ingresa tu nombre. Encuesta 2</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+				</div>
+				<div class="modal-body">
+					<form id="log">
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">Nombre</span>
+							</div>
+							<input id="nom2" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="user1">
+						</div>
+						<div id="resultado"></div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button id="nec2" type="button" class="btn btn-primary">Resolver Encuesta</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="nombreec3" tabindex="-1" role="dialog" aria-labelledby="nombreec3Title" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="nombreec3LongTitle">Igresa tu nombre. Encuesta 3.</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+				</div>
+				<div class="modal-body">
+					<form id="log">
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text">Ingresa tu nombre</span>
+							</div>
+							<input id="nom3" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="user1">
+						</div>
+						<div id="resultado"></div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button id="nec3" type="button" class="btn btn-primary">Resolver Encuesta</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<footer class="footer">
 		<div class="contenedor">
 			<div class="social">
@@ -96,7 +175,24 @@
 			<p class="copy">&copy; Safe Solutions</p>
 		</div>
 	</footer>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="js/menu.js"></script>
 	</body>
+	<script type="text/javascript">
+		$('#nec1').click(function () {
+			var n1 = $('#nom1').val();
+			$(location).attr("href","contable.php?nom="+n1+"");
+		});
+		$('#nec2').click(function () {
+			var n2 = $('#nom2').val();
+			$(location).attr("href","test2.php?nom="+n2+"");
+		});
+		$('#nec3').click(function () {
+			var n3 = $('#nom3').val();
+			$(location).attr("href","contable.php?nom="+n3+"");
+		});
+	</script>
 
 </html>
